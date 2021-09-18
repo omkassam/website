@@ -1,19 +1,41 @@
 <body style="background: rgb(131,58,180);
 background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);">
 
-<h1>hi im joe</h1>
+<body>
 
-<p>welcome to this website it has a button</p>
+  <h1>hi im joe</h1>
 
-<script type="text/javascript">
-  var clicks = 0;
-  function onClick() {
-    clicks += 1;
-    document.getElementById("clicks").innerHTML = clicks;
-  };
-</script>
+  <p>welcome to this website it has a button</p>
 
-<button type="button" style="background: rgb(252,176,69);
-background: linear-gradient(90deg, rgba(252,176,69,1) 0%, rgba(253,29,29,1) 50%, rgba(131,58,180,1) 100%);" onClick="onClick()">
-  Number of times you have clicked this button: <a id="clicks">0
-</button>
+
+  <script type="text/javascript">
+    var clicks = 0;
+    function onClick() {
+     clicks += 1;
+      document.getElementById("clicks").innerHTML = clicks;
+   };
+  </script>
+
+  <button type="button" style="background: rgb(252,176,69);
+  background: linear-gradient(90deg, rgba(252,176,69,1) 0%, rgba(253,29,29,1) 50%, rgba(131,58,180,1) 100%);" onClick="onClick()">
+    You have clicked this button <a id="clicks">0</a> times
+  </button> 
+
+  <script>
+
+  var start = new Date().getTime();
+  var x = setInterval(function() {
+    var now = new Date().getTime() - start;
+    var hours = Math.floor((now % (1000 * 60 * 60 * 24)) / (1000 *   60 * 60));
+    var minutes = Math.floor((now % (1000 * 60 * 60)) / (1000 * 60)  ) ;
+    var seconds = Math.floor((now % (1000 * 60)) / 1000);
+
+    document.getElementById("time").innerHTML = hours + "h "+ minutes + "m " + seconds + "s ";
+
+  }, 1000);
+  </script>
+
+  <p>you have been on my website for <a id="time">0h 0m 0s</p>
+
+
+</body>
