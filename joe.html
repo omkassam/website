@@ -1,0 +1,19 @@
+<body style="background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);">
+
+<h1>hi im joe</h1>
+
+<p>welcome to this website it has a button</p>
+
+<script type="text/javascript">
+  var clicks = 0;
+  function onClick() {
+    clicks += 1;
+    document.getElementById("clicks").innerHTML = clicks;
+  };
+</script>
+
+<button type="button" style="background: rgb(252,176,69);
+background: linear-gradient(90deg, rgba(252,176,69,1) 0%, rgba(253,29,29,1) 50%, rgba(131,58,180,1) 100%);" onClick="onClick()">
+  Number of times you have clicked this button: <a id="clicks">0
+</button>
