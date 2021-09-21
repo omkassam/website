@@ -11,16 +11,30 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
 
 
   <script type="text/javascript">
+    var count = 1;
     var clicks = 0;
+
     function onClick() {
-     clicks += 1;
+
+      if (clicks == 0){
+        count = 1
+      } else {
+        count = Math.floor(Math.log10(clicks*10+1))**2
+      }
+
+      clicks += count;
       document.getElementById("clicks").innerHTML = clicks;
+      document.getElementById("count").innerHTML = count;
    };
   </script>
 
   <button type="button" style="background:hotpink" onClick="onClick()">
     You have clicked this button <a id="clicks">0</a> times
   </button> 
+
+  Multiplier: <a id="count">1</a>
+
+
 
   <script>
 
