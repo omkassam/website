@@ -55,17 +55,44 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
   <br><br>
 
 
-  <canvas id="canvas" width="500" height="250" style="border:5px solid #000000;">
-  </canvas>
+  <script type="text/javascript">
+    let count2 = 1;
+    let clicks2 = 0;
 
-  <script>
-    var c = document.getElementById("canvas");
-    ctx = c.getContext("2d");
-    ctx.fillStyle = "green";
-    ctx.fillRect(0, 200, 500, 250);
-    ctx.fillStyle = "deepskyblue"
-    ctx.fillRect(0, 0, 500, 200);
+    function onClick2() {
+
+      if (clicks2 == 0){
+        count2 = 1
+      }
+
+      clicks2 += count2;
+      document.getElementById("clicks2").innerHTML = clicks2;
+
+      let speedverti = document.getElementById("marqverti")
+      speedverti.setAttribute("scrollamount", (clicks2+6))
+
+      let speedhori = document.getElementById("marqhori")
+      speedhori.setAttribute("scrollamount", (clicks2+6))
+   };
   </script>
+
+
+  
+
+  <marquee id="marqverti" direction="down" width="250" height="300" behavior="alternate" style="border:solid" scrollamount="6">
+    <marquee id="marqhori" behavior="alternate" scrollamount="6">
+      <button type="button" style="background:hotpink" onClick="onClick2()">
+        &ZeroWidthSpace; &ZeroWidthSpace;
+      </button>
+    </marquee>
+  </marquee>
+
+  <p>Speed: <a id = "clicks2">0 </p>
+
+ <marquee behavior="scroll" direction="right" scrollamount="25">
+    <img src="https://c.tenor.com/2lFt6lp1KaMAAAAj/run-pokemon.gif"></img>
+  </marquee>
+
 
 
 </body>
